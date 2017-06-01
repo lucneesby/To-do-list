@@ -135,6 +135,7 @@ ul.todo li .buttons button {
   height: 50px;
   float: left;
   background: none;
+  position: relative;
   border: 0px;
   box-shadow: none;
   outline: none;
@@ -161,6 +162,16 @@ ul.todo li .buttons button svg .fill {
   -ms-transition:fill 0.3s ease;
   -o-transition:fill 0.3s ease;
   transition: fill 0.3s ease;
+}
+
+ul.todo li .buttons button:last-of-type:before {
+  content: '';
+  width: 1px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #edf0f1;
 }
 
 ul.todo li .buttons button.remove svg .fill {
