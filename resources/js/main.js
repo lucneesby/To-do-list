@@ -14,6 +14,12 @@ document.getElementById('add').addEventListener('click', function () {
   }
 });
 
+function removeItem(e) {
+  var item = this.parentNode.parentNode;
+  var parent = item.parentNode;
+  parent.removeChild(item);
+}
+
 //Adds items to todo list
 function addItem(text) {
   var list = document.getElementById('todo')
@@ -26,6 +32,9 @@ function addItem(text) {
   var remove = document.createElement("button");
   remove.classList.add("remove");
   remove.innerHTML = removeSVG;
+
+  //remove item from list
+  remove.addEventListener('click', removeItem);
 
   var complete = document.createElement("button");
   complete.classList.add("complete");
