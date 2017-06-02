@@ -10,6 +10,7 @@ document.getElementById('add').addEventListener('click', function () {
   var value = document.getElementById('item').value;
   if (value) {
     addItem(value);
+    document.getElementById('item').value = '';
   }
 });
 
@@ -35,4 +36,6 @@ function addItem(text) {
 
   item.appendChild(buttons);
   list.appendChild(item);
+
+  list.insertBefore(item, list.childNodes[0]);
 }
